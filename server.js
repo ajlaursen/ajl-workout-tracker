@@ -13,11 +13,11 @@ app.use(express.static("public"));
 
 mongoose.connect(uri || "mongodb://localhost/workout", {
     useNewUrlParser: true,
-    useUnifiedTopology: true,
+    // useUnifiedTopology: true,
     useFindAndModify: false
   });
 
-//   app.use(require("./routes/api.js"));
+  app.use(require("./routes/api.js"));
   app.use(require("./routes/htmlRoutes.js"));
 
 app.listen(PORT, () => {
